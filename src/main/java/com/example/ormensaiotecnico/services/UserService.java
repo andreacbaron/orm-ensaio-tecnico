@@ -9,14 +9,14 @@ import com.example.ormensaiotecnico.entities.User;
 import com.example.ormensaiotecnico.repositories.UserRepository;
 
 @Service
-public class UserServices {
+public class UserService {
     @Autowired
     private UserRepository repository;
 
     @Transactional(readOnly = true)
-    public UserDTO findById(Long id) {
-        User entity = repository.findById(id).get();
-        UserDTO dto = new UserDTO(entity);
-        return dto;
-    }
+	public UserDTO findById(Long id) {
+		User entity = repository.findById(id).get();
+		UserDTO dto = new UserDTO(entity);
+		return dto;
+	}
 }
